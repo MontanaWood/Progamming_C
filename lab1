@@ -1,1 +1,47 @@
-print('c')
+#include <stdio.h>
+#include <math.h>
+
+int main(int argc, char *argv[]) {
+    char response;
+    double a, b, c;
+    double x1, x2, d=0;
+    a=2;
+    b=1;
+    c=-1;
+    
+    do {
+        
+        d=pow(b,2)-4*a*c;
+        
+        if (d > 0)
+        {
+        
+        x1=(-b+sqrt(d))/(2*a);
+    
+        x2=(-b-sqrt(d))/(2*a);
+            
+        }
+        
+        if (d < 0)
+        {
+            printf("Net kornei");
+        }
+        
+        if (0==d)
+        {
+        printf("Odin koren\n");
+        x1 = (-b-sqrt(d))/(2*a);
+        printf("x1=%lf", x1);
+        }
+
+    
+        printf("Do you want to continue? Y or N: \n");
+        getchar();
+        response = getchar();
+    
+    }
+    while(response == 'Y' || response == 'y');
+    printf("x1=%lf x2=%lf", x1, x2);
+    
+    return 0;
+}
