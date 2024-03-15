@@ -1,1 +1,28 @@
+#include <stdio.h>
+#include <math.h>
 
+float Perimeter(float side1, float side2, float side3) {
+    return side1 + side2 + side3;
+}
+
+float Area(float side1, float side2, float side3) {
+    float s = (side1 + side2 + side3) / 2;
+    return sqrt(s * (s - side1) * (s - side2) * (s - side3));
+}
+
+int main() {
+    float side1, side2, side3;
+
+    printf("vvedite dlini storon treugolnika:\n");
+    scanf("%f %f %f", &side1, &side2, &side3);
+
+    if (side1 + side2 <= side3 || side1 + side3 <= side2 || side2 + side3 <= side1) {
+        printf("takogo treugolnika net.\n");
+        return 1;
+    }
+
+    printf("P triangle: %.2f\n", Perimeter(side1, side2, side3));
+    printf("S triangle: %.2f\n", Area(side1, side2, side3));
+
+    return 0;
+}
